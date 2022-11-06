@@ -1,0 +1,25 @@
+#include<iostream>
+#include<climits>
+using namespace std;
+
+int maxsumsubarrays(int arr[],int n){
+	int x=arr[0];
+	int maxsum=x;
+	
+	for(int i=0;i<n;i++){
+		x=max(arr[i],x+arr[i]);
+		maxsum=max(maxsum,x);
+	}
+	return maxsum;
+}
+
+int main(){
+	int n,arr[100];
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	
+	int maxxs=maxsumsubarrays(arr,n);
+	cout<<maxxs<<endl;
+}
