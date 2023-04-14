@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+void replacespecialchar(string str,int i){
+	if(str[i]=='\0') {
+		cout<<str<<" ";
+		return;
+	}
+	
+	if(str[i]=='?'){
+		str[i]='0';
+		replacespecialchar(str,i+1);
+		
+		str[i]='1';
+		replacespecialchar(str,i+1);
+	}else{
+		replacespecialchar(str,i+1);
+	}
+}
+
+int main(){
+	string str;
+	cin>>str;
+	
+	replacespecialchar(str,0);
+}
